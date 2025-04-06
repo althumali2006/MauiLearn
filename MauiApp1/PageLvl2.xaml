@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.PageLvl2">
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="DarkGoldenrod" Padding="25" FlowDirection="LeftToRight" Margin="15" Opacity="0.9">
+            <Button Text="new stack1" BackgroundColor="RosyBrown" CornerRadius="0" BorderColor="Black" BorderWidth="2"/>
+            <Button Text="new stack2" BackgroundColor="RosyBrown" CornerRadius="0" BorderColor="Black" BorderWidth="2"/>
+            <Button Text="B3"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="2"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="2"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="0,0" Grid.Row="0" Grid.Column="0"/>
+                <Button Text="1,1" Grid.Row="1" Grid.Column="1"/>
+                <Button Text="2,2" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="0,0" Grid.Row="0" Grid.Column="0"/>
+                <Button Text="1,1" Grid.Row="1" Grid.Column="1"/>
+                <Button Text="2,2" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="0,0" Grid.Row="0"/>
+                <Button Text="1,1" Grid.Row="1" Grid.Column="0"/>
+                <Button Text="2,2" Grid.Row="2"/>
+            </Grid>
+            <Grid BackgroundColor="Bisque" Margin="10" WidthRequest="400" Padding="10" RowSpacing="5" ColumnSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="0,0" Grid.Row="0"/>
+                <Button Text="1,1" Grid.Row="1" Grid.Column="0"/>
+                <Button Text="2,2" Grid.Row="2"/>
+                <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                    <Label Text="Label1,1a" TextColor="Black" BackgroundColor="Red"/>
+                    <Label Text="Label1,1b" TextColor="Black" BackgroundColor="Red"/>
+                    <Label Text="Label1,1c" TextColor="Black" BackgroundColor="Red"/>
+                </VerticalStackLayout>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
