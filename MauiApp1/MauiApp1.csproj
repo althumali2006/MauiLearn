@@ -66,6 +66,9 @@
 	  <MauiXaml Update="FlexLayout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="NewHome.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Page3.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
