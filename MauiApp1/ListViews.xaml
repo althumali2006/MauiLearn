@@ -3,4 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.ListViews"
              Title="ListViews">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <ListView x:Name="ListView1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="I1" Detail="Item 1"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
 </ContentPage>
