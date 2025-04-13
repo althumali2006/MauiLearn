@@ -5,6 +5,7 @@
              Title="ScrollView">
     <ScrollView BackgroundColor="DimGrey" VerticalScrollBarVisibility="Never">
         <VerticalStackLayout Spacing="30">
+            <Label x:Name="NameLabel"/>
             <Button Text="Pop" Clicked="Button_Clicked"/>
             <Button Text="Btn"/>
             <Button Text="Btn"/>

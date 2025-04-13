@@ -4,6 +4,8 @@
              x:Class="MauiApp1.NewHome"
              Title="NewHome">
     <VerticalStackLayout>
+        <Label Text="Enter your name here"/>
+        <Entry Placeholder="Name..."  x:Name="NameInput"/>
         <Button Text="Push" WidthRequest="150" x:Name="BtnPush" Clicked="BtnPush_Clicked" HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

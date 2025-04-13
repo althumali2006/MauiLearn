@@ -9,6 +9,6 @@ public partial class NewHome : ContentPage
 
     private void BtnPush_Clicked(object sender, EventArgs e)
     {
-		Navigation.PushAsync(new ScrollView());
+        Navigation.PushAsync(new ScrollView(NameInput.Text));
     }
 }
