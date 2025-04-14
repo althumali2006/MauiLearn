@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.ListViews"
              Title="ListViews">
-    <ScrollView VerticalScrollBarVisibility="Always">
+    <ScrollView>
         <ListView x:Name="ListView1">
             <ListView.ItemTemplate>
                 <DataTemplate>
