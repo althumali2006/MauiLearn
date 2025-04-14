@@ -4,12 +4,21 @@
              x:Class="MauiApp1.ListViews"
              Title="ListViews">
     <ScrollView>
+        <VerticalStackLayout>
         <ListView x:Name="ListView1">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="I1" Detail="Item 1"/>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Details}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <ListView x:Name="ListView2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                        <ImageCell Text="{Binding Name}" Detail="{Binding Details}" ImageSource="{Binding Img}"/>
+                    </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
