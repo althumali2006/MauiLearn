@@ -10,9 +10,19 @@ public partial class ListViews : ContentPage
         {
             new UserModel { Name = "John Doe", Details = "Details about John" , Img="nora.png"},
             new UserModel { Name = "Jane Smith", Details = "Details about Jane" , Img="dotnet_bot.png"},
-            new UserModel { Name = "Sam Brown", Details = "Details about Sam" , Img="nora.png"}
+            new UserModel { Name = "Sam Brown", Details = "Details about Sam" , Img="image.jpg"}
         };
         ListView1.ItemsSource = users;
         ListView2.ItemsSource = users;
+        ListView3.ItemsSource = users;
+    }
+
+    private void ListView3_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        var slctd = e.SelectedItem as UserModel;
+        if (slctd != null)
+        {
+            DisplayAlert("Selected Item", slctd.Name, "OK");
+        }
     }
 }

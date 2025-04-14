@@ -4,21 +4,36 @@
              x:Class="MauiApp1.ListViews"
              Title="ListViews">
     <ScrollView>
-        <VerticalStackLayout>
-        <ListView x:Name="ListView1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Details}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <ListView x:Name="ListView2">
-            <ListView.ItemTemplate>
-                <DataTemplate>
+        <VerticalStackLayout Spacing="5">
+            <ListView x:Name="ListView1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Details}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView HeightRequest="1" Color="White"/>
+            <ListView x:Name="ListView2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
                         <ImageCell Text="{Binding Name}" Detail="{Binding Details}" ImageSource="{Binding Img}"/>
                     </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView HeightRequest="1" Color="White"/>
+            <ListView x:Name="ListView3" ItemSelected="ListView3_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <HorizontalStackLayout>
+                                <Image Source="{Binding Img}"/>
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Details}"/>
+                            </HorizontalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
