@@ -20,6 +20,7 @@ public partial class ListViews : ContentPage
     private void ListView3_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         var slctd = e.SelectedItem as UserModel;
+        //var slctd2=ListView3.SelectedItem as UserModel;
         if (slctd != null)
         {
             DisplayAlert("Selected Item", slctd.Name, "OK");
