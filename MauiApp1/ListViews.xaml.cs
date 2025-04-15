@@ -3,10 +3,10 @@ namespace MauiApp1;
 
 public partial class ListViews : ContentPage
 {
-	public ListViews()
-	{
-		InitializeComponent();
-		List<UserModel> users = new List<UserModel>
+    public ListViews()
+    {
+        InitializeComponent();
+        List<UserModel> users = new List<UserModel>
         {
             new UserModel { Name = "John Doe", Details = "Details about John" , Img="nora.png"},
             new UserModel { Name = "Jane Smith", Details = "Details about Jane" , Img="dotnet_bot.png"},
@@ -23,7 +23,8 @@ public partial class ListViews : ContentPage
         //var slctd2=ListView3.SelectedItem as UserModel;
         if (slctd != null)
         {
-            DisplayAlert("Selected Item", slctd.Name, "OK");
+            //DisplayAlert("Selected Item", slctd.Name, "OK");
+            Navigation.PushAsync(new SelctedViewed(slctd));
         }
     }
 }
