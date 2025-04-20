@@ -29,7 +29,6 @@ public partial class Alerts : ContentPage
     private async void BtnAlert4_Clicked(object sender, EventArgs e)
     {
         var _choice = await DisplayPromptAsync("Enter Text", "Enter Message", "OK", "Cancel", "message here...", -1);
-        if (!string.IsNullOrEmpty(_choice))
-            LblDisplayPropmptChoice.Text = _choice;
+        LblDisplayPropmptChoice.Text = _choice;
     }
 }
