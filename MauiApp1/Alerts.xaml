@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Alerts"
+             Title="Alerts">
+    <VerticalStackLayout>
+        <Label Text="Default Alert (Cancel only)"/>
+        <Button Text="Show Alert" x:Name="BtnAlert" Clicked="BtnAlert_Clicked" VerticalOptions="Center"/>
+        <Label Text="(Accept/Reject) Alert, returns true or false"/>
+        <Button Text="Show Alert" x:Name="BtnAlert2" Clicked="BtnAlert2_Clicked" VerticalOptions="Center"/>
+        <HorizontalStackLayout>
+            <Label Text="Choice"/>
+            <Label x:Name="LblChoice"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
