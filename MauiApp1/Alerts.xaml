@@ -18,11 +18,13 @@
             <Label Text="Choice"/>
             <Label x:Name="LblMultiChoice"/>
         </HorizontalStackLayout>
-        <Label Text="Display Propmpt Alert, returns selected string"/>
+        <Label Text="Display Propmpt Alert, returns entered string"/>
         <Button Text="Show Alert, Display Propmpt Alert" x:Name="BtnAlert4" Clicked="BtnAlert4_Clicked" VerticalOptions="Center"/>
         <HorizontalStackLayout>
             <Label Text="Choice"/>
             <Label x:Name="LblDisplayPropmptChoice"/>
         </HorizontalStackLayout>
+        <Label Text="Toast Alert, returns nothing!"/>
+        <Button Text="Show Alert, Toast Alert" x:Name="BtnAlert5" Clicked="BtnAlert5_Clicked" VerticalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>
