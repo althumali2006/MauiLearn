@@ -4,19 +4,25 @@
              x:Class="MauiApp1.Alerts"
              Title="Alerts">
     <VerticalStackLayout>
-        <Label Text="Default Alert (Cancel only)"/>
-        <Button Text="Show Alert" x:Name="BtnAlert" Clicked="BtnAlert_Clicked" VerticalOptions="Center"/>
+        <Label Text="Default Alert (OK only), although in c# code called cancel only!"/>
+        <Button Text="Show Alert, Default Alert (OK only)" x:Name="BtnAlert" Clicked="BtnAlert_Clicked" VerticalOptions="Center"/>
         <Label Text="(Accept/Reject) Alert, returns true or false"/>
-        <Button Text="Show Alert" x:Name="BtnAlert2" Clicked="BtnAlert2_Clicked" VerticalOptions="Center"/>
+        <Button Text="Show Alert, (Accept/Reject) Alert" x:Name="BtnAlert2" Clicked="BtnAlert2_Clicked" VerticalOptions="Center"/>
         <HorizontalStackLayout>
             <Label Text="Choice"/>
             <Label x:Name="LblChoice"/>
         </HorizontalStackLayout>
         <Label Text="Multiple (string) Alert, returns selected string"/>
-        <Button Text="Show Alert" x:Name="BtnAlert3" Clicked="BtnAlert3_Clicked" VerticalOptions="Center"/>
+        <Button Text="Show Alert, Multiple (string) Alert" x:Name="BtnAlert3" Clicked="BtnAlert3_Clicked" VerticalOptions="Center"/>
         <HorizontalStackLayout>
             <Label Text="Choice"/>
             <Label x:Name="LblMultiChoice"/>
+        </HorizontalStackLayout>
+        <Label Text="Display Propmpt Alert, returns selected string"/>
+        <Button Text="Show Alert, Display Propmpt Alert" x:Name="BtnAlert4" Clicked="BtnAlert4_Clicked" VerticalOptions="Center"/>
+        <HorizontalStackLayout>
+            <Label Text="Choice"/>
+            <Label x:Name="LblDisplayPropmptChoice"/>
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
