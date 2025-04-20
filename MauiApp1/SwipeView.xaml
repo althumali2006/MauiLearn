@@ -12,10 +12,10 @@
                         <ViewCell>
                             <SwipeView>
                                 <SwipeView.LeftItems>
-                                    <SwipeItem Text="Click" Clicked="SwipeItem_Clicked" CommandParameter="{Binding Name}" BackgroundColor="DarkRed"/>
+                                    <SwipeItem Text="Click for Name" Clicked="SwipeItem_Clicked" CommandParameter="{Binding Name}" BackgroundColor="DarkRed"/>
                                 </SwipeView.LeftItems>
                                 <SwipeView.RightItems>
-                                    <SwipeItem Text="Click" Clicked="SwipeItem_Clicked" CommandParameter="{Binding Details}" BackgroundColor="DarkGreen"/>
+                                    <SwipeItem Text="Click for Details" Clicked="SwipeItem_Clicked" CommandParameter="{Binding Details}" BackgroundColor="DarkGreen"/>
                                 </SwipeView.RightItems>
                                 <StackLayout Orientation="Vertical">
                                     <Label Text="{Binding Name}"/>
