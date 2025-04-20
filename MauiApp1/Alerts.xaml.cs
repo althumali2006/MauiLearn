@@ -15,6 +15,14 @@ public partial class Alerts : ContentPage
     private async void BtnAlert2_Clicked(object sender, EventArgs e)
     {
         var _choice = await DisplayAlert("Alert", "Alert Shown", "Accept", "Reject");
-        LblChoice.Text = " " + _choice.ToString();
+        if (!string.IsNullOrEmpty(_choice.ToString()))
+            LblChoice.Text = $" {_choice.ToString()}";
+    }
+
+    private async void BtnAlert3_Clicked(object sender, EventArgs e)
+    {
+        var _choice = await DisplayActionSheet("Multiples_Title", "Ok", "Yes", "Act1", "Act2", "Act3");
+        if (!string.IsNullOrEmpty(_choice))
+            LblMultiChoice.Text = $" {_choice}";
     }
 }

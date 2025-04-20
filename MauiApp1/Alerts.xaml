@@ -12,5 +12,11 @@
             <Label Text="Choice"/>
             <Label x:Name="LblChoice"/>
         </HorizontalStackLayout>
+        <Label Text="Multiple (string) Alert, returns selected string"/>
+        <Button Text="Show Alert" x:Name="BtnAlert3" Clicked="BtnAlert3_Clicked" VerticalOptions="Center"/>
+        <HorizontalStackLayout>
+            <Label Text="Choice"/>
+            <Label x:Name="LblMultiChoice"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
