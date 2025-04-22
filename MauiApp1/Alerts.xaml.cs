@@ -1,3 +1,6 @@
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+
 namespace MauiApp1;
 
 public partial class Alerts : ContentPage
@@ -25,15 +28,14 @@ public partial class Alerts : ContentPage
         if (!string.IsNullOrEmpty(_choice))
             LblMultiChoice.Text = $" {_choice}";
     }
-
     private async void BtnAlert4_Clicked(object sender, EventArgs e)
     {
         var _choice = await DisplayPromptAsync("Enter Text", "Enter Message", "OK", "Cancel", "message here...", -1);
         LblDisplayPropmptChoice.Text = _choice;
     }
 
-    private void BtnAlert5_Clicked(object sender, EventArgs e)
+    private async void BtnAlert5_Clicked(object sender, EventArgs e)
     {
-
+        await Toast.Make("Toast Shown", ToastDuration.Short,14).Show();
     }
 }
