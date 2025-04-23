@@ -35,7 +35,7 @@ namespace ConsoleApp1
             float fx = 10;
             float fy = 15;
             float fz = fx + fy;
-            Console.WriteLine($"FZ/2 {fz/2}");
+            Console.WriteLine($"FZ/2 {fz / 2}");
         }
     }
 }
