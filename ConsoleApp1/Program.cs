@@ -45,10 +45,24 @@ namespace ConsoleApp1
 
             int ifx = 15;
             int ify = 10;
-            if(ifx < ify)
-                Console.WriteLine("X less than Y");
+            if (ifx < ify)
+                Console.WriteLine("X is less than Y");
             if (ifx > ify)
-                Console.WriteLine("X larger than Y");
+                Console.WriteLine("X is larger than Y");
+            if (ifx == ify)
+                Console.WriteLine("X = Y");
+            if (ifx != ify)
+                Console.WriteLine("X != Y");
+            if (ifx < ify)
+                Console.WriteLine("X is less than Y");
+            else
+                Console.WriteLine("X is not less than Y");
+            if (ifx < ify)
+                Console.WriteLine("X is less than Y");
+            else if (ifx == ify)
+                Console.WriteLine("X = Y");
+            else
+                Console.WriteLine("X is larger than Y");
         }
     }
 }
