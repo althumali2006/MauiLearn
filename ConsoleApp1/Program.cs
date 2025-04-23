@@ -42,6 +42,13 @@ namespace ConsoleApp1
             //int ix = Convert.ToInt32(Console.ReadLine());
             int ix = Convert.ToInt32("21");
             Console.WriteLine($"IX {ix}");
+
+            int ifx = 15;
+            int ify = 10;
+            if(ifx < ify)
+                Console.WriteLine("X less than Y");
+            if (ifx > ify)
+                Console.WriteLine("X larger than Y");
         }
     }
 }
