@@ -23,7 +23,7 @@ namespace ConsoleApp1
             int y = 15;
             int z;
             z = x + y;
-            Console.WriteLine($"Z/2: {z/2}");
+            Console.WriteLine($"Z/2: {z / 2}");
             string sx = "10";
             string sy = "15";
             string sz = sx + sy;
@@ -31,11 +31,14 @@ namespace ConsoleApp1
             double dx = 10;
             double dy = 15;
             double dz = dx + dy;
-            Console.WriteLine($"DZ/2 {dz/2}");
-            float fx = 10;
+            Console.WriteLine($"DZ/2 {dz / 2}");
+            float fx = 10.0f;
             float fy = 15;
             float fz = fx + fy;
+            Console.WriteLine($"FZ {fz}");
             Console.WriteLine($"FZ/2 {fz / 2}");
+            //Console.WriteLine(Console.ReadLine());
+            Console.WriteLine(89 + 89);
         }
     }
 }
