@@ -39,6 +39,8 @@ namespace ConsoleApp1
             Console.WriteLine($"FZ/2 {fz / 2}");
             //Console.WriteLine(Console.ReadLine());
             Console.WriteLine(89 + 89);
+            int ix = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"IX {ix}");
         }
     }
 }
