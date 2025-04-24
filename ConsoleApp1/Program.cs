@@ -131,6 +131,12 @@ namespace ConsoleApp1
             integers[3] = 4;
             integers[4] = 5;
             Console.WriteLine($"Item 1: {integers[0]}");
+            Console.WriteLine("/*****************/\nFunctions");
+            printDate();
+        }
+        private static void printDate()
+        {
+            Console.WriteLine(DateTime.Now.ToShortDateString());
         }
     }
 }
