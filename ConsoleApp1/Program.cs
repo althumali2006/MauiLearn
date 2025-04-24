@@ -117,13 +117,20 @@ namespace ConsoleApp1
             }
             //arrays
             Console.WriteLine("/************/\nArrays");
-            string[] strings = new string[5];
-            strings[0] = "S1";
-            strings[1] = "S2";
-            strings[2] = "S3";
-            strings[3] = "S4";
-            strings[4] = "S5";
-            Console.WriteLine($"Item 1: {strings[0]}");
+            string[] stringsarray = new string[5];
+            stringsarray[0] = "S1";
+            stringsarray[1] = "S2";
+            stringsarray[2] = "S3";
+            stringsarray[3] = "S4";
+            stringsarray[4] = "S5";
+            Console.WriteLine($"Item 1: {stringsarray[0]}");
+            int[] integers = new int[5];
+            integers[0] = 1;
+            integers[1] = 2;
+            integers[2] = 3;
+            integers[3] = 4;
+            integers[4] = 5;
+            Console.WriteLine($"Item 1: {integers[0]}");
         }
     }
 }
