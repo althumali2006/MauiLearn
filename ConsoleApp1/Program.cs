@@ -10,6 +10,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("/*****************/");
+            Console.WriteLine("Vars");
             Console.Title = "Hi App";
             Console.WriteLine(Console.Title);
             //Console.WriteLine(Console.ReadLine());
@@ -42,7 +44,8 @@ namespace ConsoleApp1
             //int ix = Convert.ToInt32(Console.ReadLine());
             int ix = Convert.ToInt32("21");
             Console.WriteLine($"IX {ix}");
-
+            Console.WriteLine("/*****************/");
+            Console.WriteLine("IF");
             int ifx = 15;
             int ify = 10;
             if (ifx < ify)
@@ -63,6 +66,56 @@ namespace ConsoleApp1
                 Console.WriteLine("X = Y");
             else
                 Console.WriteLine("X is larger than Y");
+            Console.WriteLine("/*****************/");
+            Console.WriteLine("Enter two integers fo IFs");
+            int ix2 = Convert.ToInt32(Console.ReadLine());
+            int iy2 = Convert.ToInt32(Console.ReadLine());
+            if (ix2 > iy2)
+                Console.WriteLine("ix2 > iy2");
+            else if (ix2 < iy2)
+                Console.WriteLine("ix2 < iy2");
+            if (ix2 > iy2 && ix2 == iy2)
+                Console.WriteLine("ix2>iy2 & ix2==iy2");
+            Console.WriteLine("");
+            //for while and do-while
+            Console.WriteLine("/*****************/");
+            Console.WriteLine("Loops");
+            int i = 0;
+            for (i = 0; i < 6; i++)
+                Console.WriteLine($"for {i}");
+            i = 0;
+            while (i < 6)
+            {
+                Console.WriteLine($"While {i}");
+                i++;
+            }
+            i = 0;
+            do
+            {
+                Console.WriteLine($"Do-While {i}");
+                i++;
+            } while (i < 6);
+            //switches
+            Console.WriteLine("/*****************/");
+            Console.WriteLine("Switches");
+            Console.WriteLine("Enter an integer for switch");
+            int switched = Convert.ToInt32(Console.ReadLine());
+            switch (switched)
+            {
+                case 1:
+                    Console.WriteLine("1");
+                    break;
+                case 2:
+                    Console.WriteLine("2"); ;
+                    break;
+                case 3:
+                    Console.WriteLine("3");
+                    break;
+                default:
+                    Console.WriteLine("default");
+                    break;
+            }
+            //arrays
         }
     }
 }
