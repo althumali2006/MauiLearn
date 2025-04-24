@@ -116,6 +116,14 @@ namespace ConsoleApp1
                     break;
             }
             //arrays
+            Console.WriteLine("/************/\nArrays");
+            string[] strings = new string[5];
+            strings[0] = "S1";
+            strings[1] = "S2";
+            strings[2] = "S3";
+            strings[3] = "S4";
+            strings[4] = "S5";
+            Console.WriteLine($"Item 1: {strings[0]}");
         }
     }
 }
