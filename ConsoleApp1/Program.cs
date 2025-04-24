@@ -116,7 +116,7 @@ namespace ConsoleApp1
                     break;
             }
             //arrays
-            Console.WriteLine("/************/\nArrays");
+            Console.WriteLine("/*****************/\nArrays");
             string[] stringsarray = new string[5];
             stringsarray[0] = "S1";
             stringsarray[1] = "S2";
