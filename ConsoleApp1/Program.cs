@@ -228,6 +228,8 @@ namespace ConsoleApp1
         }
         private static void printList(List<PersonModel> persons)
         {
+            if (persons.Count < 1)
+                Console.WriteLine($"List is empty");
             foreach (PersonModel person in persons)
                 printPerson(person);
         }
