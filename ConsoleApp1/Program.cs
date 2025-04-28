@@ -169,16 +169,14 @@ namespace ConsoleApp1
                 Age = getAge(DateTime.ParseExact("1989/03/07", "yyyy/MM/dd", null))
             }
             };
-            Console.WriteLine("People in List 1");
-            foreach (PersonModel person in persons1)
-                printPerson(person);
+            Console.WriteLine("\nPeople in List 1");
+            printList(persons1);
             string[] firstNames = new string[] { "Ahmed", "Nora" };
             string[] lastNames = new string[] { "AlThmali", "AlNamlah" };
             int[] ages = new int[] { 41, 36 };
             List<PersonModel> persons2 = Lister(firstNames, lastNames, ages);
-            Console.WriteLine("People in List 2");
-            foreach (PersonModel person in persons2)
-                printPerson(person);
+            Console.WriteLine("\nPeople in List 2");
+            printList(persons2);
         }
         private static void printDate()
         {
@@ -224,6 +222,11 @@ namespace ConsoleApp1
                 persons.Add(person);
             }
             return persons;
+        }
+        private static void printList(List<PersonModel> persons)
+        {
+            foreach (PersonModel person in persons)
+                printPerson(person);
         }
     }
 }
