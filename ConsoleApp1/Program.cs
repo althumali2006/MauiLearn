@@ -180,6 +180,14 @@ namespace ConsoleApp1
             Console.WriteLine("\nClear List 2");
             persons2.Clear();
             printList(persons2);
+            Console.WriteLine("\n***********Linq************");
+            Console.WriteLine("***********Linq************");
+            Console.WriteLine("***********Linq************\n");
+            string startSearchWord = "ah";
+            string endSearchWord = "ra";
+            string containSearchWord = "nam";
+            //PersonModel found = startFinder(persons1, startSearchWord);
+            //printPerson(found);
         }
         private static void printDate()
         {
@@ -230,8 +238,16 @@ namespace ConsoleApp1
         {
             if (persons.Count < 1)
                 Console.WriteLine($"List is empty");
-            foreach (PersonModel person in persons)
-                printPerson(person);
+            else
+                foreach (PersonModel person in persons)
+                    printPerson(person);
         }
+        /*
+        private static PersonModel startFinder(List<PersonModel> persons, string startSearchWord)
+        {
+            var res = persons.Where(item => item.FirstName.StartsWith(startSearchWord));
+            PersonModel person = res as PersonModel;
+            return person;
+        }*/
     }
 }
