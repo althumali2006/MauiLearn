@@ -152,6 +152,33 @@ namespace ConsoleApp1
             PersonModel person3 = personer("Ahmed", "AlThmali", getAge(DateTime.ParseExact("1983/07/06", "yyyy/MM/dd", null)));
             printPerson(person3);
             Console.WriteLine("/*****************/\nLists");
+            List<PersonModel> persons1 = new List<PersonModel>()
+            {
+                new PersonModel
+            {
+                ID = 0,
+                FirstName = "Ahmed",
+                LastName = "AlThmali",
+                Age = getAge(DateTime.ParseExact("1983/07/06", "yyyy/MM/dd", null))
+            },
+                new PersonModel
+            {
+                ID = 0,
+                FirstName = "Ahmed",
+                LastName = "AlThmali",
+                Age = getAge(DateTime.ParseExact("1983/07/06", "yyyy/MM/dd", null))
+            }
+            };
+            Console.WriteLine("People in List 1");
+            foreach (PersonModel person in persons1)
+                printPerson(person);
+            string[] firstNames = new string[] { "Ahmed", "Nora" };
+            string[] lastNames = new string[] { "AlThmali", "AlNamlah" };
+            int[] ages = new int[] { 41, 37 };
+            List<PersonModel> persons2 = Lister(firstNames, lastNames, ages);
+            Console.WriteLine("People in List 2");
+            foreach (PersonModel person in persons2)
+                printPerson(person);
         }
         private static void printDate()
         {
@@ -180,6 +207,23 @@ namespace ConsoleApp1
                 Age = age
             };
             return person;
+        }
+        private static List<PersonModel> Lister(string[] fNAmes, string[] lNames, int[] ages)
+        {
+            int counter = fNAmes.Length;
+            List<PersonModel> persons = new List<PersonModel>();
+            for (int i = 0; i < counter; i++)
+            {
+                PersonModel person = new PersonModel()
+                {
+                    ID = i,
+                    FirstName = fNAmes[i],
+                    LastName = lNames[i],
+                    Age = ages[i]
+                };
+                persons.Add(person);
+            }
+            return persons;
         }
     }
 }
