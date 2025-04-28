@@ -177,6 +177,9 @@ namespace ConsoleApp1
             List<PersonModel> persons2 = Lister(firstNames, lastNames, ages);
             Console.WriteLine("\nPeople in List 2");
             printList(persons2);
+            Console.WriteLine("\nClear List 2");
+            persons2.Clear();
+            printList(persons2);
         }
         private static void printDate()
         {
