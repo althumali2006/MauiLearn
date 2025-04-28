@@ -164,9 +164,9 @@ namespace ConsoleApp1
                 new PersonModel
             {
                 ID = 0,
-                FirstName = "Ahmed",
-                LastName = "AlThmali",
-                Age = getAge(DateTime.ParseExact("1983/07/06", "yyyy/MM/dd", null))
+                FirstName = "Nora",
+                LastName = "AlNamlah",
+                Age = getAge(DateTime.ParseExact("1989/03/07", "yyyy/MM/dd", null))
             }
             };
             Console.WriteLine("People in List 1");
@@ -174,7 +174,7 @@ namespace ConsoleApp1
                 printPerson(person);
             string[] firstNames = new string[] { "Ahmed", "Nora" };
             string[] lastNames = new string[] { "AlThmali", "AlNamlah" };
-            int[] ages = new int[] { 41, 37 };
+            int[] ages = new int[] { 41, 36 };
             List<PersonModel> persons2 = Lister(firstNames, lastNames, ages);
             Console.WriteLine("People in List 2");
             foreach (PersonModel person in persons2)
