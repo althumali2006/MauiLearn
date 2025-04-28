@@ -151,6 +151,7 @@ namespace ConsoleApp1
             printPerson(person2);
             PersonModel person3 = personer("Ahmed", "AlThmali", getAge(DateTime.ParseExact("1983/07/06", "yyyy/MM/dd", null)));
             printPerson(person3);
+            Console.WriteLine("/*****************/\nLists");
         }
         private static void printDate()
         {
