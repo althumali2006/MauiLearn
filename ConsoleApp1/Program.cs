@@ -148,7 +148,9 @@ namespace ConsoleApp1
                 LastName = "AlThmali",
                 Age = getAge(DateTime.ParseExact("1983/07/06", "yyyy/MM/dd", null))
             };
-            Console.WriteLine($"{person2.FirstName} {person2.LastName} {person2.Age}");
+            printPerson(person2);
+            PersonModel person3 = personer("Ahmed", "AlThmali", getAge(DateTime.ParseExact("1983/07/06", "yyyy/MM/dd", null)));
+            printPerson(person3);
         }
         private static void printDate()
         {
@@ -162,7 +164,21 @@ namespace ConsoleApp1
             if (birthday > today.AddYears(-years))
                 years--;
             return years;
-
+        }
+        private static void printPerson(PersonModel person)
+        {
+            Console.WriteLine($"{person.FirstName} {person.LastName} {person.Age}");
+        }
+        private static PersonModel personer(string firstName, string lastName, int age)
+        {
+            PersonModel person = new PersonModel()
+            {
+                ID = 2,
+                FirstName = firstName,
+                LastName = lastName,
+                Age = age
+            };
+            return person;
         }
     }
 }
