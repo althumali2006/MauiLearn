@@ -163,7 +163,7 @@ namespace ConsoleApp1
             },
                 new PersonModel
             {
-                ID = 0,
+                ID = 1,
                 FirstName = "Nora",
                 LastName = "AlNamlah",
                 Age = getAge(DateTime.ParseExact("1989/03/07", "yyyy/MM/dd", null))
@@ -186,8 +186,13 @@ namespace ConsoleApp1
             string startSearchWord = "ah";
             string endSearchWord = "ra";
             string containSearchWord = "nam";
-            //PersonModel found = startFinder(persons1, startSearchWord);
-            //printPerson(found);
+            var res = persons1.Where(item => item.FirstName.ToUpper().StartsWith(startSearchWord.ToUpper()));
+            foreach (PersonModel person in res)
+            {
+                Console.WriteLine($"{person.FirstName} {person.LastName} {person.Age}");
+            }
+            IEnumerable<PersonModel> found = startFinder(persons1, startSearchWord);
+            printList(found);
         }
         private static void printDate()
         {
@@ -204,7 +209,14 @@ namespace ConsoleApp1
         }
         private static void printPerson(PersonModel person)
         {
-            Console.WriteLine($"{person.FirstName} {person.LastName} {person.Age}");
+            try
+            {
+                Console.WriteLine($"{person.FirstName} {person.LastName} {person.Age}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
         private static PersonModel personer(string firstName, string lastName, int age)
         {
@@ -242,12 +254,27 @@ namespace ConsoleApp1
                 foreach (PersonModel person in persons)
                     printPerson(person);
         }
-        /*
-        private static PersonModel startFinder(List<PersonModel> persons, string startSearchWord)
+        private static void printList(IEnumerable<PersonModel> persons)
         {
-            var res = persons.Where(item => item.FirstName.StartsWith(startSearchWord));
-            PersonModel person = res as PersonModel;
-            return person;
-        }*/
+            if (persons.Count() == 0)
+                Console.WriteLine($"List is empty");
+            else
+                foreach (PersonModel person in persons)
+                    printPerson(person);
+        }
+
+        private static IEnumerable<PersonModel> startFinder(List<PersonModel> persons, string startSearchWord)
+        {
+            try
+            {
+                var res = persons.Where(item => item.FirstName.ToUpper().StartsWith(startSearchWord.ToUpper()));
+                return res;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
     }
 }
