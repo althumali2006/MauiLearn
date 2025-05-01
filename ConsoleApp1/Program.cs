@@ -279,6 +279,9 @@ namespace ConsoleApp1
 
             Console.WriteLine($"\nOderBy FirstName V1\n");
             printList(orderByFirstName(persons1));
+
+            Console.WriteLine($"\nOderBy FirstName Desc V1\n");
+            printList(orderByFirstNameDesc(persons1));
         }
 
         private static void printDate()
@@ -402,6 +405,11 @@ namespace ConsoleApp1
         private static IEnumerable<PersonModel> orderByFirstName(List<PersonModel> persons)
         {
             var res=persons.OrderBy(x=> x.FirstName);
+            return res;
+        }
+        private static IEnumerable<PersonModel> orderByFirstNameDesc(List<PersonModel> persons)
+        {
+            var res = persons.OrderByDescending(x => x.FirstName);
             return res;
         }
     }
