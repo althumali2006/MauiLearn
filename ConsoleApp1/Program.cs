@@ -164,14 +164,16 @@ namespace ConsoleApp1
                     ID = 0,
                     FirstName = "Ahmed",
                     LastName = "AlThmali",
-                    Age = AgeFrom("1983/07/06")
+                    Age = AgeFrom("1983/07/06"),
+                    Gender="Male"
                 },
                 new PersonModel
                 {
                     ID = 1,
                     FirstName = "Nora",
                     LastName = "AlNamlah",
-                    Age = AgeFrom("1989/03/07")
+                    Age = AgeFrom("1989/03/07"),
+                    Gender="Female"
                 }
             };
 
@@ -183,56 +185,64 @@ namespace ConsoleApp1
                     ID = 2,
                     FirstName = "Abdullah",
                     LastName = "AlThmali",
-                    Age = getAge(DateTime.ParseExact("1986/05/12", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1986/05/12", "yyyy/MM/dd", null)),
+                    Gender="Male"
                 },
                 new PersonModel
                 {
                     ID = 3,
                     FirstName = "Amal",
                     LastName = "AlThmali",
-                    Age = getAge(DateTime.ParseExact("1992/08/22", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1992/08/22", "yyyy/MM/dd", null)),
+                    Gender="Female"
                 },
                 new PersonModel
                 {
                     ID = 4,
                     FirstName = "Fahad",
                     LastName = "AlThmali",
-                    Age = getAge(DateTime.ParseExact("1990/11/30", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1990/11/30", "yyyy/MM/dd", null)),
+                    Gender="Male"
                 },
                 new PersonModel
                 {
                     ID = 5,
                     FirstName = "Iman",
                     LastName = "AlThmali",
-                    Age = getAge(DateTime.ParseExact("1987/01/15", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1987/01/15", "yyyy/MM/dd", null)),
+                    Gender="Female"
                 },
                 new PersonModel
                 {
                     ID = 6,
                     FirstName = "Sahar",
                     LastName = "AlThmali",
-                    Age = getAge(DateTime.ParseExact("1984/09/10", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1984/09/10", "yyyy/MM/dd", null)),
+                    Gender="Male"
                 },
                 new PersonModel
                 {
                     ID = 7,
                     FirstName = "Aisha",
                     LastName = "AlThmali",
-                    Age = getAge(DateTime.ParseExact("1995/04/19", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1995/04/19", "yyyy/MM/dd", null)),
+                    Gender="Female"
                 },
                 new PersonModel
                 {
                     ID = 8,
                     FirstName = "Mohammed",
                     LastName = "Saleh",
-                    Age = getAge(DateTime.ParseExact("1979/02/27", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1979/02/27", "yyyy/MM/dd", null)),
+                    Gender="Male"
                 },
                 new PersonModel
                 {
                     ID = 9,
                     FirstName = "Fatimah",
                     LastName = "AlHarthy",
-                    Age = getAge(DateTime.ParseExact("1993/06/03", "yyyy/MM/dd", null))
+                    Age = getAge(DateTime.ParseExact("1993/06/03", "yyyy/MM/dd", null)),
+                    Gender="Female"
                 }
             });
 
@@ -288,6 +298,12 @@ namespace ConsoleApp1
 
             Console.WriteLine($"\nOderBy FirstName Desc V2\n");
             printList(orderByFirstNameDescV2(persons1));
+
+            Console.WriteLine($"\nGrouping by Gender V0\n");
+            GroupByGenderV0(persons1);
+
+            Console.WriteLine($"\nGrouping by Gender V1\n");
+            GroupByGenderV1(persons1);
         }
 
         private static void printDate()
@@ -310,7 +326,7 @@ namespace ConsoleApp1
             try
             {
                 // Assuming person is not null here. Add check if necessary.
-                Console.WriteLine($"{person.FirstName} {person.LastName} {person.Age}");
+                Console.WriteLine($"{person.FirstName} {person.LastName} {person.Age} {person.Gender}");
             }
             catch (Exception ex)
             {
@@ -427,6 +443,34 @@ namespace ConsoleApp1
         {
             var res = from p in persons orderby p.FirstName descending select p;
             return res;
+        }
+        private static void GroupByGenderV0(List<PersonModel> persons)
+        {
+            var tmpres = persons.GroupBy(x => x.Gender);
+            foreach (var item in tmpres)
+            {
+                Console.WriteLine(item.Key);
+                Console.WriteLine($"---------");
+                foreach (var i in item)
+                {
+                    Console.WriteLine($"{i.ID} {i.FirstName} {i.LastName} {i.Age} {i.Gender}");
+                }
+                Console.WriteLine();
+            }
+        }
+        private static void GroupByGenderV1(List<PersonModel> persons)
+        {
+            var tmpres = from p in persons group p by p.Gender;
+            foreach (var item in tmpres)
+            {
+                Console.WriteLine(item.Key);
+                Console.WriteLine($"---------");
+                foreach (var i in item)
+                {
+                    Console.WriteLine($"{i.ID} {i.FirstName} {i.LastName} {i.Age} {i.Gender}");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
