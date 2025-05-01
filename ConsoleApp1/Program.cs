@@ -193,6 +193,9 @@ namespace ConsoleApp1
             }
             IEnumerable<PersonModel> found = startFinder(persons1, startSearchWord);
             printList(found);
+
+            IEnumerable<PersonModel> found2 = startFinderV2(persons1, startSearchWord);
+            printList(found2);
         }
         private static void printDate()
         {
@@ -268,6 +271,19 @@ namespace ConsoleApp1
             try
             {
                 var res = persons.Where(item => item.FirstName.ToUpper().StartsWith(startSearchWord.ToUpper()));
+                return res;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+        private static IEnumerable<PersonModel> startFinderV2(List<PersonModel> persons, string startSearchWord)
+        {
+            try
+            {
+                var res = from person in persons where person.FirstName.ToUpper().StartsWith(startSearchWord.ToUpper()) select person;
                 return res;
             }
             catch (Exception ex)
