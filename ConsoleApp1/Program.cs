@@ -327,6 +327,78 @@ namespace ConsoleApp1
             printStats(GetStats(persons1));
             Console.WriteLine("\nStats: Average, Sum, Max, Min for Empty List will cause System.InvalidOperationException: Sequence contains no elements\n");
             //printStats(GetStats(persons2));
+            Console.WriteLine($"\nJoin\n");
+            persons2.AddRange(new List<PersonModel>
+            {
+                new PersonModel
+                {
+                    ID = 2,
+                    FirstName = "Abdullah",
+                    LastName = "AlThmali",
+                    Age = getAge(DateTime.ParseExact("1986/05/12", "yyyy/MM/dd", null)),
+                    Gender="Male"
+                },
+                new PersonModel
+                {
+                    ID = 3,
+                    FirstName = "Amal",
+                    LastName = "AlThmali",
+                    Age = getAge(DateTime.ParseExact("1992/08/22", "yyyy/MM/dd", null)),
+                    Gender="Female"
+                },
+                new PersonModel
+                {
+                    ID = 4,
+                    FirstName = "Fahad",
+                    LastName = "AlThmali",
+                    Age = getAge(DateTime.ParseExact("1990/11/30", "yyyy/MM/dd", null)),
+                    Gender="Male"
+                },
+                new PersonModel
+                {
+                    ID = 5,
+                    FirstName = "Iman",
+                    LastName = "AlThmali",
+                    Age = getAge(DateTime.ParseExact("1987/01/15", "yyyy/MM/dd", null)),
+                    Gender="Female"
+                },
+                new PersonModel
+                {
+                    ID = 6,
+                    FirstName = "Sahar",
+                    LastName = "AlThmali",
+                    Age = getAge(DateTime.ParseExact("1984/09/10", "yyyy/MM/dd", null)),
+                    Gender="Male"
+                },
+                new PersonModel
+                {
+                    ID = 7,
+                    FirstName = "Aisha",
+                    LastName = "AlThmali",
+                    Age = getAge(DateTime.ParseExact("1995/04/19", "yyyy/MM/dd", null)),
+                    Gender="Female"
+                },
+                new PersonModel
+                {
+                    ID = 8,
+                    FirstName = "Mohammed",
+                    LastName = "Saleh",
+                    Age = getAge(DateTime.ParseExact("1979/02/27", "yyyy/MM/dd", null)),
+                    Gender="Male"
+                },
+                new PersonModel
+                {
+                    ID = 9,
+                    FirstName = "Fatimah",
+                    LastName = "AlHarthy",
+                    Age = getAge(DateTime.ParseExact("1993/06/03", "yyyy/MM/dd", null)),
+                    Gender="Female"
+                }
+            });
+            Console.WriteLine($"\nUnconditioned join\n");
+            printList(unConditionedJoin(persons1, persons2));
+            Console.WriteLine($"\nConditioned join\n");
+            printList(conditionedJoin(persons1, persons2));
         }
 
         private static void printDate()
@@ -527,6 +599,14 @@ namespace ConsoleApp1
         private static void printStats(StatsModel stats)
         {
             Console.WriteLine($"Sum: {stats.Sum}, Average: {stats.Average}, Max: {stats.Max}, Min: {stats.Min}");
+        }
+        private static IEnumerable<PersonModel> unConditionedJoin(List<PersonModel> persons1, List<PersonModel> persons2)
+        {
+            return from p1 in persons1 join p2 in persons2 on 1 equals 1 select p1;
+        }
+        private static IEnumerable<PersonModel> conditionedJoin(List<PersonModel> persons1, List<PersonModel> persons2)
+        {
+            return from p1 in persons1 join p2 in persons2 on p1.ID equals p2.ID select p1;
         }
     }
 }
