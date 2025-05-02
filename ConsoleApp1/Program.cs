@@ -304,6 +304,21 @@ namespace ConsoleApp1
 
             Console.WriteLine($"\nGrouping by Gender V1\n");
             GroupByGenderV1(persons1);
+
+            Console.WriteLine($"\nFirst\n");
+            printPerson(returnFirst(persons1));
+
+            Console.WriteLine($"\nFirst Empty List ,error must be handled\n");
+            try
+            {
+                printPerson(returnFirst(persons2));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
+            Console.WriteLine($"\nFirst or Default Empty List\n");
+            printPerson(returnFirstorDefault(persons2));
         }
 
         private static void printDate()
@@ -449,6 +464,7 @@ namespace ConsoleApp1
             var tmpres = persons.GroupBy(x => x.Gender);
             foreach (var item in tmpres)
             {
+                Console.WriteLine($"GroupByGenderV0");
                 Console.WriteLine(item.Key);
                 Console.WriteLine($"---------");
                 foreach (var i in item)
@@ -463,6 +479,7 @@ namespace ConsoleApp1
             var tmpres = from p in persons group p by p.Gender;
             foreach (var item in tmpres)
             {
+                Console.WriteLine($"GroupByGenderV1");
                 Console.WriteLine(item.Key);
                 Console.WriteLine($"---------");
                 foreach (var i in item)
@@ -471,6 +488,14 @@ namespace ConsoleApp1
                 }
                 Console.WriteLine();
             }
+        }
+        private static PersonModel returnFirst(List<PersonModel> persons)
+        {
+            return persons.First();
+        }
+        private static PersonModel returnFirstorDefault(List<PersonModel> persons)
+        {
+            return persons.FirstOrDefault();
         }
     }
 }
