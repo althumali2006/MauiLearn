@@ -308,7 +308,7 @@ namespace ConsoleApp1
             Console.WriteLine($"\nFirst\n");
             printPerson(returnFirst(persons1));
 
-            Console.WriteLine($"\nFirst Empty List ,error must be handled return empty sequence exception\n");
+            Console.WriteLine($"\nFirst Empty List ,error must be handled return System.InvalidOperationException: Sequence contains no elements\n");
             try
             {
                 printPerson(returnFirst(persons2));
@@ -323,6 +323,10 @@ namespace ConsoleApp1
             Console.WriteLine($"Count of persons1 {countList(persons1)}");
             Console.WriteLine($"\nCount empty\n");
             Console.WriteLine($"Count of persons2 {countList(persons2)}");
+            Console.WriteLine("\nStats: Average, Sum, Max, Min for Non Empty List\n");
+            printStats(GetStats(persons1));
+            Console.WriteLine("\nStats: Average, Sum, Max, Min for Empty List will cause System.InvalidOperationException: Sequence contains no elements\n");
+            //printStats(GetStats(persons2));
         }
 
         private static void printDate()
@@ -504,6 +508,25 @@ namespace ConsoleApp1
         private static int countList(List<PersonModel> persons)
         {
             return persons.Count();
+        }
+        private static StatsModel GetStats(List<PersonModel> persons)
+        {
+            List<int> AgesList = new List<int>();
+            foreach (var i in persons)
+            {
+                AgesList.Add(i.Age);
+            }
+            return new StatsModel()
+            {
+                Sum = AgesList.Sum(),
+                Average = AgesList.Average(),
+                Max = AgesList.Max(),
+                Min = AgesList.Min()
+            };
+        }
+        private static void printStats(StatsModel stats)
+        {
+            Console.WriteLine($"Sum: {stats.Sum}, Average: {stats.Average}, Max: {stats.Max}, Min: {stats.Min}");
         }
     }
 }
