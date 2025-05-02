@@ -126,5 +126,11 @@ namespace TTSOffLine.Data
             new WordModel { Arab = "بذور القرنبيط", Eng = "Cauliflower Seed" },
             new WordModel { Arab = "بذور الكوسا", Eng = "Zucchini Seed" }
         };
+        public List<WordModel> GetAll()
+        {
+            var list = new List<WordModel>();
+            list = words;
+            return list;
+        }
     }
 }
