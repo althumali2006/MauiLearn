@@ -4,5 +4,10 @@
              x:Class="TTSOffLine.MainPage"
              Title="TTSOffLine"
              >
-
+    <ScrollView>
+        <VerticalStackLayout>
+            <Entry x:Name="WordEntry" HorizontalOptions="Fill" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" Placeholder="Enter Word here..." PlaceholderColor="Grey" FontSize="18" Margin="10,10,10,10"/>
+            <Button x:Name="BtnSpeak" Text="Speak" HorizontalOptions="Fill" VerticalOptions="Start" BackgroundColor="Wheat" TextColor="Black" FontSize="18" Margin="10,10,10,10" CornerRadius="20" Clicked="BtnSpeak_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
