@@ -308,7 +308,7 @@ namespace ConsoleApp1
             Console.WriteLine($"\nFirst\n");
             printPerson(returnFirst(persons1));
 
-            Console.WriteLine($"\nFirst Empty List ,error must be handled\n");
+            Console.WriteLine($"\nFirst Empty List ,error must be handled return empty sequence exception\n");
             try
             {
                 printPerson(returnFirst(persons2));
@@ -317,8 +317,12 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"{ex.Message}");
             }
-            Console.WriteLine($"\nFirst or Default Empty List\n");
+            Console.WriteLine($"\nFirst or Default Empty List returns null string\n");
             printPerson(returnFirstorDefault(persons2));
+            Console.WriteLine($"\nCount non empty\n");
+            Console.WriteLine($"Count of persons1 {countList(persons1)}");
+            Console.WriteLine($"\nCount empty\n");
+            Console.WriteLine($"Count of persons2 {countList(persons2)}");
         }
 
         private static void printDate()
@@ -496,6 +500,10 @@ namespace ConsoleApp1
         private static PersonModel returnFirstorDefault(List<PersonModel> persons)
         {
             return persons.FirstOrDefault();
+        }
+        private static int countList(List<PersonModel> persons)
+        {
+            return persons.Count();
         }
     }
 }
