@@ -10,7 +10,8 @@ namespace TTSOffLine
         public MainPage()
         {
             InitializeComponent();
-            TextToSpeech.Default.SpeakAsync("مرحبا بكم", new SpeechOptions { Pitch = 0, Volume = 1 }, CancellationToken.None);
+            var locales = TextToSpeech.Default.GetLocalesAsync().Result;
+            TextToSpeech.Default.SpeakAsync("Hello", new SpeechOptions { Pitch = 0, Volume = 1, Locale = locales.FirstOrDefault(l => l.Language == "en-IE") }, CancellationToken.None);
         }
 
         private async void BtnSpeak_Clicked(object sender, EventArgs e)
@@ -20,9 +21,9 @@ namespace TTSOffLine
                 var locales = await TextToSpeech.Default.GetLocalesAsync();
                 var options = new SpeechOptions
                 {
-                    Pitch = 1f,              // 0.0–1.0
+                    Pitch = 0f,              // 0.0–1.0
                     Volume = 1f,             // 0.0–1.0
-                    Locale = locales.FirstOrDefault(l => l.Language == "ar-SA")
+                    Locale = locales.FirstOrDefault(l => l.Language == "en-IE")
                 };
                 await TextToSpeech.Default.SpeakAsync(WordEntry.Text, options);
                 //TextToSpeech.Default.SpeakAsync(WordEntry.Text, new SpeechOptions { Pitch = 1, Volume = 1 }, CancellationToken.None);
