@@ -13,6 +13,7 @@
                     <TapGestureRecognizer x:Name="ImgTap" Tapped="ImgTap_Tapped"/>
                 </Image.GestureRecognizers>
             </Image>
+            <!--<Editor x:Name="Locales"/>-->
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
