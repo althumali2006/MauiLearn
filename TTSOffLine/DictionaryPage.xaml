@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TTSOffLine.DictionaryPage"
+             Title="DictionaryPage">
+    <ListView x:Name="MyList" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <VerticalStackLayout Padding="5" Spacing="1">
+                        <HorizontalStackLayout Spacing="2">
+                            <Label Text="{Binding Eng}"/>
+                            <BoxView WidthRequest="1"/>
+                            <Label Text="{Binding Arab}"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿namespace TTSOffLine
+﻿
+namespace TTSOffLine
 {
     public partial class MainPage : ContentPage
     {
@@ -11,20 +12,25 @@
 
         private async void BtnSpeak_Clicked(object sender, EventArgs e)
         {
-            var locales = await TextToSpeech.Default.GetLocalesAsync();
-            var options = new SpeechOptions
+            try
             {
-                Pitch = 1f,              // 0.0–1.0
-                Volume = 1f,             // 0.0–1.0
-                Locale = locales.FirstOrDefault(l => l.Language == "en-US")
-            };
-            await TextToSpeech.Default.SpeakAsync(WordEntry.Text, options);
-
-            //TextToSpeech.Default.SpeakAsync(WordEntry.Text, new SpeechOptions { Pitch = 1, Volume = 1 }, CancellationToken.None);
+                var locales = await TextToSpeech.Default.GetLocalesAsync();
+                var options = new SpeechOptions
+                {
+                    Pitch = 1f,              // 0.0–1.0
+                    Volume = 1f,             // 0.0–1.0
+                    Locale = locales.FirstOrDefault(l => l.Language == "ar-SA")
+                };
+                await TextToSpeech.Default.SpeakAsync(WordEntry.Text, options);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Alert", ex.Message, "OK");
+            }            //TextToSpeech.Default.SpeakAsync(WordEntry.Text, new SpeechOptions { Pitch = 1, Volume = 1 }, CancellationToken.None);
         }
         private void ImgTap_Tapped(object sender, TappedEventArgs e)
         {
-
+            Navigation.PushAsync(new DictionaryPage());
         }
     }
 }
