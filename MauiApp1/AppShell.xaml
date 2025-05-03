@@ -8,7 +8,7 @@
     Title="MauiApp1">
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:SwipeView}"
+        ContentTemplate="{DataTemplate local:Alerts}"
         Route="MainPage" />
 
 </Shell>
