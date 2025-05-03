@@ -1,4 +1,7 @@
 ﻿
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+
 namespace TTSOffLine
 {
     public partial class MainPage : ContentPage
@@ -22,11 +25,13 @@ namespace TTSOffLine
                     Locale = locales.FirstOrDefault(l => l.Language == "ar-SA")
                 };
                 await TextToSpeech.Default.SpeakAsync(WordEntry.Text, options);
+                //TextToSpeech.Default.SpeakAsync(WordEntry.Text, new SpeechOptions { Pitch = 1, Volume = 1 }, CancellationToken.None);
             }
             catch (Exception ex)
             {
-                DisplayAlert("Alert", ex.Message, "OK");
-            }            //TextToSpeech.Default.SpeakAsync(WordEntry.Text, new SpeechOptions { Pitch = 1, Volume = 1 }, CancellationToken.None);
+                //DisplayAlert("Alert", ex.Message, "OK");
+                Toast.Make(ex.Message, ToastDuration.Long, 24);
+            }            
         }
         private void ImgTap_Tapped(object sender, TappedEventArgs e)
         {
