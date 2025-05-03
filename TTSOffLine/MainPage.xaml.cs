@@ -30,7 +30,7 @@ namespace TTSOffLine
             catch (Exception ex)
             {
                 //DisplayAlert("Alert", ex.Message, "OK");
-                Toast.Make(ex.Message, ToastDuration.Long, 24);
+                Toast.Make(ex.Message, ToastDuration.Long);
             }            
         }
         private void ImgTap_Tapped(object sender, TappedEventArgs e)
