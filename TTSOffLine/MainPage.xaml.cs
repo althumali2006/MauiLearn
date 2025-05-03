@@ -11,7 +11,7 @@ namespace TTSOffLine
         {
             InitializeComponent();
             var locales = TextToSpeech.Default.GetLocalesAsync().Result;
-            TextToSpeech.Default.SpeakAsync("Hello", new SpeechOptions { Pitch = 0, Volume = 1, Locale = locales.FirstOrDefault(l => l.Language == "en-IE") }, CancellationToken.None);
+            TextToSpeech.Default.SpeakAsync("Hello", new SpeechOptions { Pitch = 0, Volume = 1, Locale = locales.FirstOrDefault(l => l.Language == "en-UK") }, CancellationToken.None);
         }
 
         private async void BtnSpeak_Clicked(object sender, EventArgs e)
