@@ -9,7 +9,7 @@ namespace MauiApplvl2.Models
 {
     class Student
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public long Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
