@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApplvl2.Pages.Examples2" Title="منتجنا الرائع" BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryBrandColor">#1B5E20</Color>
+            <Color x:Key="PrimaryVariantColor">#003300</Color>
+            <Color x:Key="SecondaryBrandColor">#B8860B</Color>
+            <Color x:Key="SecondaryVariantColor">#8B4513</Color>
+            <Color x:Key="BrandTextColorOnPrimary">#FFFFFF</Color>
+            <Color x:Key="BrandTextColorOnSecondary">#FFFFFF</Color>
+            <Color x:Key="SurfaceColor">#FFFFFF</Color>
+            <Color x:Key="OnSurfaceTextColor">#212121</Color>
+            <Color x:Key="PageBackgroundColor">#F8F8F8</Color>
+            <Color x:Key="InputBorderColor">#BDBDBD</Color>
+            <Color x:Key="ErrorColor">#B00020</Color>
+            <x:Double x:Key="FontSizeH1">28</x:Double>
+            <x:Double x:Key="FontSizeH2">22</x:Double>
+            <x:Double x:Key="FontSizeBody">16</x:Double>
+            <x:Double x:Key="FontSizeCaption">12</x:Double>
+
+            <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBrandColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource BrandTextColorOnPrimary}"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeBody}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="25,0"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1.0" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBrandColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryVariantColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.95" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryVariantColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#BDBDBD" />
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <Style x:Key="SecondaryButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryBrandColor}"/>
+                <Setter Property="BorderColor" Value="{StaticResource PrimaryBrandColor}"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeBody}"/>
+                <Setter Property="Padding" Value="15,0"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#1A1B5E20" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#331B5E20" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="#BDBDBD" />
+                                    <Setter Property="TextColor" Value="#BDBDBD" />
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <Style x:Key="GoldenButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBrandColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource BrandTextColorOnSecondary}"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeBody}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="15,0"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1.0" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBrandColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource SecondaryVariantColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.95" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource SecondaryVariantColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#E0E0E0" />
+                                    <Setter Property="TextColor" Value="#BDBDBD" />
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource OnSurfaceTextColor}"/>
+                <Setter Property="PlaceholderColor" Value="{StaticResource InputBorderColor}"/>
+                <Setter Property="HeightRequest" Value="48"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeBody}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource SurfaceColor}"/>
+            </Style>
+            <Style x:Key="InputBorderStyle" TargetType="Border">
+                <Setter Property="Stroke" Value="{StaticResource InputBorderColor}"/>
+                <Setter Property="StrokeThickness" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource SurfaceColor}"/>
+                <Setter Property="Padding" Value="10,0"/>
+                <Setter Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle CornerRadius="8"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Focused">
+                                <VisualState.Setters>
+                                    <Setter Property="Stroke" Value="{StaticResource PrimaryBrandColor}" />
+                                    <Setter Property="StrokeThickness" Value="2"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <Style x:Key="BrandCardStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource SurfaceColor}"/>
+                <Setter Property="CornerRadius" Value="12"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="#EEEEEE"/>
+                <Setter Property="Padding" Value="20"/>
+                <Setter Property="Margin" Value="10, 15"/>
+            </Style>
+            <Style x:Key="H1LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSizeH1}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryBrandColor}"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+            </Style>
+            <Style x:Key="H2LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSizeH2}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="{StaticResource SecondaryBrandColor}"/>
+                <Setter Property="Margin" Value="0,0,0,8"/>
+            </Style>
+            <Style x:Key="BodyLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSizeBody}"/>
+                <Setter Property="TextColor" Value="{StaticResource OnSurfaceTextColor}"/>
+                <Setter Property="LineHeight" Value="1.5"/>
+            </Style>
+            <Style x:Key="CaptionLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSizeCaption}"/>
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0" Padding="0">
+            <Grid RowDefinitions="Auto, Auto, Auto" Padding="30, 40" BackgroundColor="{StaticResource PrimaryBrandColor}">
+                <Label Grid.Row="0" 
+                       Text="الحل الأمثل لـ[مشكلتك]" 
+                       Style="{StaticResource H1LabelStyle}" 
+                       TextColor="{StaticResource BrandTextColorOnPrimary}" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="1" 
+                       Text="اكتشف كيف يمكن لمنتجنا [فعل شيء مذهل] وتحقيق [فائدة رئيسية] بكل سهولة." 
+                       Style="{StaticResource BodyLabelStyle}" 
+                       TextColor="{StaticResource BrandTextColorOnPrimary}" 
+                       HorizontalTextAlignment="Center"
+                       Margin="0,15,0,25"/>
+                <Button Grid.Row="2" 
+                        Text="ابدأ تجربتك المجانية" 
+                        Style="{StaticResource GoldenButtonStyle}" HorizontalOptions="Center"/>
+            </Grid>
+
+            <VerticalStackLayout Padding="25, 35" Spacing="30">
+                <Label Text="لماذا تختار منتجنا؟" 
+                       Style="{StaticResource H2LabelStyle}" 
+                       HorizontalOptions="Center"/>
+
+                <Frame Style="{StaticResource BrandCardStyle}">
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="dotnet_bot.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="ميزة رائعة 1" FontAttributes="Bold" Style="{StaticResource BodyLabelStyle}"/>
+                            <Label Text="شرح تفصيلي لهذه الميزة وكيف تساعد المستخدم في تحقيق أهدافه." Style="{StaticResource CaptionLabelStyle}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame Style="{StaticResource BrandCardStyle}">
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="dotnet_bot.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="ميزة مذهلة 2" FontAttributes="Bold" Style="{StaticResource BodyLabelStyle}"/>
+                            <Label Text="وصف آخر لميزة قوية تجعل منتجنا الخيار الأفضل في السوق." Style="{StaticResource CaptionLabelStyle}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame Style="{StaticResource BrandCardStyle}">
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="dotnet_bot.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="سهولة الاستخدام" FontAttributes="Bold" Style="{StaticResource BodyLabelStyle}"/>
+                            <Label Text="تصميم بديهي وواجهة مستخدم سلسة لتجربة لا مثيل لها." Style="{StaticResource CaptionLabelStyle}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <Border StrokeThickness="0" Padding="30, 40" Margin="0,20,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="{StaticResource PrimaryVariantColor}" Offset="0.0" />
+                        <GradientStop Color="{StaticResource PrimaryBrandColor}" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <Label Text="هل أنت مستعد للارتقاء؟" 
+                            Style="{StaticResource H2LabelStyle}" 
+                            TextColor="{StaticResource BrandTextColorOnPrimary}" 
+                            HorizontalTextAlignment="Center"/>
+                    <Label Text="انضم إلى آلاف المستخدمين السعداء وحقق أهدافك اليوم." 
+                            Style="{StaticResource BodyLabelStyle}" 
+                            TextColor="{StaticResource BrandTextColorOnPrimary}" 
+                            HorizontalTextAlignment="Center"/>
+                    <Button Text="اكتشف الباقات والأسعار" 
+                            Style="{StaticResource GoldenButtonStyle}" 
+                            Margin="0,15,0,0"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="© 2025 اسم شركتك. جميع الحقوق محفوظة." 
+                    Style="{StaticResource CaptionLabelStyle}" 
+                    HorizontalOptions="Center" 
+                    Padding="20"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

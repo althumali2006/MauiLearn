@@ -6,4 +6,9 @@ public partial class Home : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void BtnTransactions_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new InsertPage1());
+    }
 }
