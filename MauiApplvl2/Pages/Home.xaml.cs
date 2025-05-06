@@ -1,14 +1,26 @@
+using MauiApplvl2.Data;
+
 namespace MauiApplvl2.Pages;
 
 public partial class Home : ContentPage
 {
 	public Home()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
-
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        //SqlHelper sqlHelper = new SqlHelper();
+        //sqlHelper.GenerateSql();
+    }
     private void BtnTransactions_Clicked(object sender, EventArgs e)
     {
 		Navigation.PushAsync(new InsertPage1());
+    }
+
+    private void ToolbarItem_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new InsertPage1());
     }
 }
