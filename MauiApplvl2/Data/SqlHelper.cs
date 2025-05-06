@@ -11,7 +11,7 @@ namespace MauiApplvl2.Data
     class SqlHelper
     {
         private static string DbName = "Students.db";
-        private static string DbPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        private static string DbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private static string DbFullName = Path.Combine(DbName, DbPath);
         public SQLiteConnection conn = new SQLiteConnection(DbFullName);
         internal void GenerateSql()

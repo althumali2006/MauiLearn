@@ -11,8 +11,15 @@ public partial class Home : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        //SqlHelper sqlHelper = new SqlHelper();
-        //sqlHelper.GenerateSql();
+        try
+        {
+            SqlHelper sqlHelper = new SqlHelper();
+            sqlHelper.GenerateSql();
+        }
+        catch (Exception ex)
+        {
+            ExLabel.Text = ex.Message;
+        }
     }
     private void BtnTransactions_Clicked(object sender, EventArgs e)
     {

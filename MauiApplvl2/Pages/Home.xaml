@@ -21,5 +21,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Label x:Name="ExLabel"/>
     </VerticalStackLayout>
 </ContentPage>
