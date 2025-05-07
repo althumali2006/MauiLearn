@@ -12,7 +12,7 @@ namespace MauiApplvl2.Data
     {
         private static string DbName = "Students.db";
         private static string DbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        private static string DbFullName = Path.Combine(DbName, DbPath);
+        private static string DbFullName = Path.Combine(DbPath, DbName);
         public SQLiteConnection conn = new SQLiteConnection(DbFullName);
         internal void GenerateSql()
         {
