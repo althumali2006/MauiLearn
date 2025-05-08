@@ -29,10 +29,10 @@ namespace MauiApplvl2.Data
             return SqlConn.Find<Student>(id);
         }
         //To Update Student
-        /*internal int UpdateStudent(Student student)
+        internal int UpdateStudent(Student student)
         {
-
-        }*/
+            return SqlConn.Update(student);
+        }
         //To Delete Student
         internal int DeleteStudent(Student student)
         {
