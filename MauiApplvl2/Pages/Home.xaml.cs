@@ -5,6 +5,7 @@ namespace MauiApplvl2.Pages;
 
 public partial class Home : ContentPage
 {
+    SqlService sqlService = new SqlService();
     public Home()
     {
         InitializeComponent();
@@ -21,7 +22,6 @@ public partial class Home : ContentPage
         {
             DisplayAlert("Error", ex.Message, "OK");
         }
-        SqlService sqlService = new SqlService();
         MyList.ItemsSource = sqlService.GetAll();
     }
 
