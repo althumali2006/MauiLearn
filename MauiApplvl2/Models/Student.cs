@@ -7,7 +7,7 @@ using SQLite;
 
 namespace MauiApplvl2.Models
 {
-    class Student
+    public class Student
     {
         [PrimaryKey, AutoIncrement]
         public long Id { get; set; }

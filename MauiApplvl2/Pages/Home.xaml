@@ -7,8 +7,7 @@
         <ToolbarItem Text="Insert" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
-        <Button x:Name="BtnTransactions" Text="Transactions" Clicked="BtnTransactions_Clicked"/>
-        <ListView x:Name="MyList">
+        <ListView x:Name="MyList" ItemSelected="MyList_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -21,6 +20,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Entry x:Name="ExLabel"/>
     </VerticalStackLayout>
 </ContentPage>
